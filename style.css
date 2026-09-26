@@ -1,0 +1,913 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, serif;
+  overflow-x: hidden;
+  background: #fff5f7;
+  color: #4a2630;
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: Georgia, serif;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.welcome-page button,
+.continue-btn {
+  padding: 13px 26px;
+  border-radius: 30px;
+  background: #d95b78;
+  color: white;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.welcome-page button:active,
+.continue-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+.welcome-page {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 25px 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe4ec,
+      #fff7f9
+    );
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.welcome-page.hide {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.welcome-content {
+  width: 100%;
+  max-width: 500px;
+}
+
+.big-heart {
+  font-size: 58px;
+  margin-bottom: 22px;
+  animation: heartbeat 2s infinite;
+}
+
+.welcome-page h1 {
+  font-size: 31px;
+  line-height: 1.25;
+  color: #4a2630;
+  margin-bottom: 16px;
+}
+
+.welcome-page p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #6b4a52;
+}
+
+
+/* =========================
+   PAGE 2
+========================= */
+
+.message-page {
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 45px 16px;
+
+  background: #fff5f7;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
+}
+
+.message-page.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.message-box {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 32px 22px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.07);
+}
+
+.section-heart {
+  font-size: 48px;
+  color: #d95b78;
+  margin-bottom: 16px;
+}
+
+.message-box h2 {
+  font-size: 30px;
+  color: #4a2630;
+  margin-bottom: 25px;
+}
+
+.message-box p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5f464d;
+  margin-bottom: 18px;
+}
+
+
+/* =========================
+   PAGE 3
+========================= */
+
+.love-page {
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 60px 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff5f7,
+      #ffe9ef
+    );
+}
+
+.love-content {
+  width: 100%;
+  max-width: 550px;
+}
+
+.love-page h2 {
+  font-size: 30px;
+  line-height: 1.3;
+  color: #4a2630;
+  margin-bottom: 18px;
+}
+
+.love-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b4a52;
+  margin-bottom: 32px;
+}
+
+
+/* Love cards */
+
+.love-items {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+.love-item {
+  width: 100%;
+  min-height: 120px;
+
+  padding: 20px 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background:
+    rgba(255, 255, 255, 0.85);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.3s ease;
+}
+
+.love-item:active {
+  transform: scale(0.97);
+}
+
+.love-item span {
+  font-size: 28px;
+  color: #d95b78;
+}
+
+.love-item p {
+  margin-top: 8px;
+  margin-bottom: 0;
+
+  font-size: 15px;
+  line-height: 1.4;
+
+  color: #5f464d;
+}
+
+.ending-line {
+  margin-top: 32px;
+
+  font-size: 17px;
+  line-height: 1.6;
+
+  font-style: italic;
+
+  color: #8a5260;
+}
+
+
+/* =========================
+   PAGE 4
+========================= */
+
+.deserve-page {
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 60px 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7f9,
+      #ffe5ed
+    );
+}
+
+.deserve-content {
+  width: 100%;
+  max-width: 550px;
+}
+
+.glowing-heart {
+  font-size: 55px;
+  color: #d95b78;
+
+  margin-bottom: 15px;
+
+  animation:
+    heartGlow 2s infinite;
+}
+
+.deserve-page h2 {
+  font-size: 32px;
+  line-height: 1.3;
+
+  color: #4a2630;
+
+  margin-bottom: 12px;
+}
+
+.deserve-subtitle {
+  font-size: 16px;
+  color: #76545d;
+
+  margin-bottom: 30px;
+}
+
+
+/* Typing box */
+
+.typing-box {
+  width: 100%;
+
+  min-height: 300px;
+
+  padding: 25px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.07);
+}
+
+.typing-line {
+  min-height: 30px;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: #5f464d;
+
+  margin-bottom: 16px;
+}
+
+
+/* =========================
+   PAGE 5
+========================= */
+
+.promise-page {
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 60px 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe8ef,
+      #fff7f9
+    );
+}
+
+.promise-content {
+  width: 100%;
+  max-width: 550px;
+}
+
+.promise-heart {
+  font-size: 55px;
+
+  color: #d95b78;
+
+  margin-bottom: 15px;
+
+  animation:
+    heartbeat 2s infinite;
+}
+
+.promise-page h2 {
+  font-size: 32px;
+  line-height: 1.3;
+
+  color: #4a2630;
+
+  margin-bottom: 12px;
+}
+
+.promise-intro {
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: #76545d;
+
+  margin-bottom: 30px;
+}
+
+
+/* Promise box */
+
+.promise-box {
+  width: 100%;
+
+  padding: 30px 22px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.07);
+}
+
+.promise-box > p {
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: #5f464d;
+
+  margin-bottom: 22px;
+}
+
+
+/* Final promise */
+
+.final-promise {
+  margin-top: 25px;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid #f1cbd5;
+}
+
+.final-promise span {
+  display: block;
+
+  font-size: 28px;
+
+  margin-bottom: 12px;
+
+  animation:
+    heartbeat 2s infinite;
+}
+
+.final-promise p {
+  font-size: 17px;
+  line-height: 1.8;
+
+  color: #4a2630;
+
+  font-style: italic;
+}
+
+
+/* =========================
+   PAGE 5 FINAL MESSAGE
+========================= */
+
+.final-message {
+  margin-top: 45px;
+
+  padding: 30px 10px;
+}
+
+.final-heart {
+  font-size: 45px;
+
+  margin-bottom: 15px;
+
+  animation:
+    heartbeat 2s infinite;
+}
+
+.final-message h3 {
+  font-size: 27px;
+
+  color: #4a2630;
+
+  margin-bottom: 20px;
+}
+
+.final-message p {
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: #6b4a52;
+
+  margin-bottom: 6px;
+}
+
+.forever-heart {
+  font-size: 32px;
+
+  margin-top: 20px;
+
+  animation:
+    heartbeat 2s infinite;
+}
+
+
+/* =========================
+   PAGE 6
+========================= */
+
+.final-page {
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 60px 16px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #6b263c,
+      #35151f
+    );
+
+  color: white;
+}
+
+.final-content {
+  width: 100%;
+  max-width: 550px;
+}
+
+.final-big-heart {
+  font-size: 62px;
+
+  margin-bottom: 18px;
+
+  animation:
+    finalHeartbeat 2s infinite;
+}
+
+.final-small-text {
+  font-size: 16px;
+
+  color: #f6cbd6;
+
+  margin-bottom: 10px;
+}
+
+.final-page h2 {
+  font-size: 35px;
+
+  margin-bottom: 28px;
+
+  color: white;
+}
+
+
+/* Final letter */
+
+.final-letter {
+  width: 100%;
+
+  padding: 28px 20px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.final-letter p {
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: #f9e8ed;
+
+  margin-bottom: 20px;
+}
+
+.final-letter .final-love {
+  font-size: 18px;
+
+  color: white;
+
+  font-style: italic;
+
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   FINAL HEART BUTTON
+========================= */
+
+.heart-button {
+  display: block;
+
+  margin:
+    30px auto 8px;
+
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(255,255,255,0.4);
+
+  background:
+    rgba(255,255,255,0.12);
+
+  color: white;
+
+  font-size: 28px;
+
+  transition:
+    all 0.4s ease;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.heart-button:active {
+  transform: scale(0.85);
+}
+
+.heart-button.clicked {
+  transform: scale(1.2);
+
+  background:
+    rgba(255,255,255,0.22);
+}
+
+.click-text {
+  font-size: 14px;
+
+  color: #dcaeba;
+
+  margin-top: 8px;
+}
+
+
+/* =========================
+   HIDDEN SURPRISE
+========================= */
+
+.hidden-surprise {
+  max-height: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  transform:
+    translateY(20px);
+
+  transition:
+    max-height 1.5s ease,
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.hidden-surprise.show {
+  max-height: 500px;
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  margin-top: 30px;
+}
+
+.surprise-line {
+  width: 70px;
+  height: 1px;
+
+  margin:
+    0 auto 25px;
+
+  background:
+    rgba(255,255,255,0.35);
+}
+
+.hidden-surprise p {
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: #f4dce2;
+
+  margin-bottom: 18px;
+}
+
+.hidden-surprise .surprise-main {
+  font-size: 20px;
+
+  color: white;
+
+  font-style: italic;
+}
+
+.surprise-hearts {
+  margin-top: 22px;
+
+  font-size: 22px;
+
+  letter-spacing: 5px;
+
+  animation:
+    heartbeat 2s infinite;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+#hearts {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 999;
+}
+
+.floating-heart {
+  position: absolute;
+
+  bottom: -50px;
+
+  animation:
+    floatHeart 4s linear forwards;
+
+  opacity: 0.8;
+}
+
+@keyframes floatHeart {
+
+  0% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateY(-110vh)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================
+   HEARTBEAT
+========================= */
+
+@keyframes heartbeat {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
+
+}
+
+
+/* =========================
+   GLOWING HEART
+========================= */
+
+@keyframes heartGlow {
+
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================
+   FINAL HEART
+========================= */
+
+@keyframes finalHeartbeat {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .welcome-page h1 {
+    font-size: 27px;
+  }
+
+  .big-heart {
+    font-size: 52px;
+  }
+
+  .message-box {
+    padding: 28px 18px;
+  }
+
+  .message-box h2 {
+    font-size: 27px;
+  }
+
+  .love-page h2,
+  .deserve-page h2,
+  .promise-page h2 {
+    font-size: 28px;
+  }
+
+  .love-items {
+    gap: 9px;
+  }
+
+  .love-item {
+    min-height: 110px;
+  }
+
+  .typing-box {
+    padding: 22px 17px;
+  }
+
+  .promise-box {
+    padding: 27px 18px;
+  }
+
+  .final-page h2 {
+    font-size: 31px;
+  }
+
+  .final-letter {
+    padding: 25px 17px;
+  }
+
+}
